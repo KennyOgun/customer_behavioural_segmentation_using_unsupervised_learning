@@ -33,14 +33,12 @@ In this project, we use customer data to perform segmentation based on behaviora
   * scipy
 To install the dependencies, you can use the following pip command:
 
-bash
-Copy code
-pip install -r requirements.txt
+  * pip install -r requirements.txt
 
 **Data Preprocessing**
 **Load Data:** The data is loaded from a CSV file containing customer transactional data.
 **Standardization:** The features are scaled using standardization techniques to ensure they are on the same scale for clustering.
-**Feature Selection:** Key features such as Days_Since_Last_Purchase, Transaction_Count, Total_Expenditure, Avg_Transaction_Value, and Product_Diversity are selected for clustering.
+**Feature Selection:** Key features such as **Days_Since_Last_Purchase, Transaction_Count, Total_Expenditure, Avg_Transaction_Value, and Product_Diversity** are selected for clustering.
 **Missing Data Handling:** Any missing values in the dataset are handled appropriately using imputation or removal methods.
 
 **Clustering and Segmentation**
@@ -93,17 +91,15 @@ A bar plot shows the percentage distribution of customers across the 3 clusters,
     
 **How to Use**
 1. Clone the repository:
-bash
 
-git clone https://github.com/yourusername/customer-segmentation-analysis.git
+  * git clone https://github.com/yourusername/customer-segmentation-analysis.git
 
 2. Install the required dependencies:
-bash
-Copy code
-pip install -r requirements.txt
+
+  * pip install -r requirements.txt
 
 3. Run the analysis:
-Open the customer_segmentation_analysis.py script to run the KMeans clustering and generate visualizations.
+Open the **e_commerce.ipynb** script to run the KMeans clustering and generate visualizations.
 Modify the dataset path or customize the number of clusters as needed.
 
 **License**
@@ -112,6 +108,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 **Acknowledgements**
 **Customer Data:** The dataset used in this project was provided by [amdari].
 **KMeans Algorithm:** Clustering performed using the scikit-learn library.
+
 This README.md provides an in-depth guide on setting up, running, and interpreting the results of your customer segmentation project.
 
 
