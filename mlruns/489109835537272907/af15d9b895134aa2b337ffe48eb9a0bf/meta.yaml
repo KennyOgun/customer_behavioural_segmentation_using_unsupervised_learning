@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/489109835537272907/af15d9b895134aa2b337ffe48eb9a0bf/artifacts
+end_time: 1732740200071
+entry_point_name: ''
+experiment_id: '489109835537272907'
+lifecycle_stage: active
+run_id: af15d9b895134aa2b337ffe48eb9a0bf
+run_name: Gradient Boosting
+run_uuid: af15d9b895134aa2b337ffe48eb9a0bf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732740193847
+status: 3
+tags: []
+user_id: Kenny Ogundana
