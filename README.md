@@ -102,6 +102,7 @@ To assess the clustering performance, the following evaluation metrics were used
    
   <img width="322" alt="image" src="https://github.com/user-attachments/assets/da6e52c9-3725-430a-9498-c9ad7b6f2e15" />
 
+
 KMeans is the best overall model because it has the highest Calinski-Harabasz Score- meaning its clusters are compact and well-separated, has the lowest Davies-Bouldin Score-meaning its clusters are well-distinguished and its Silhouette Score (0.6061) is good, although DBSCAN is higher, but DBSCAN struggles with compactness.
 
  ## Visualization - KMeans Clustering
@@ -118,11 +119,11 @@ The bar plot shows the percentage distribution of customers across the four(4) c
 The radar charts are generated for each cluster to visualize the average behavior of customers in that segment across various features.
 Each cluster is represented by a different color, and the features are plotted on a circular axis to easily compare the behaviors
 
-## Customers Clustering Analysis:
+# Customers Clustering Analysis:
 
 1. **Cluster 0(Low Recency, Moderate Frequency & Monetary Value): Average Customers** 
 
-   Customers in this cluster recently made purchases, but their buying frequency and monetary contributions are average or slightly below average.
+   Customers in this cluster recently made purchases and they forms the majority (68.98%), but their buying frequency and monetary contributions are average or slightly below average.
 
    Recommendation Strategies:
 
@@ -133,7 +134,7 @@ Each cluster is represented by a different color, and the features are plotted o
 
 2. **Cluster 1(High Frequency & High Monetary Value): Top Spenders/High-Value Loyal Customers** 
 
-   This is the most valuable customer segment with high purchase frequency, high spending, and recent transactions.
+   This is the most valuable customer segment(makes up only 0.09% but critical for revenue,) with high purchase frequency, high spending, and recent transactions.
 
    Recommendation Strategies:
 
@@ -142,7 +143,7 @@ Each cluster is represented by a different color, and the features are plotted o
       - Retention Focus: Send personalized thank-you notes and loyalty points to reinforce their value to the business.
 
 3. **Cluster 2(High Recency, Low Frequency & Low Monetary Value)   :At-Risk (Churned) Customers**  
-   Customers in this cluster are at risk of churn as they haven’t purchased recently, and their spending is below average.
+   Customers in this cluster are at risk of churn (represents 26.05%) as they haven’t purchased recently, and their spending is below average.
 
    Recommendation Strategies:
 
@@ -153,7 +154,7 @@ Each cluster is represented by a different color, and the features are plotted o
 
 4. **Cluster 3(Moderate Recency, Moderate Frequency & Monetary Value): Potential Loyalists**  
 
-      These customers are moderately active and have slightly higher-than-average spending, indicating potential for loyalty.
+      These customers(making up of 4.87%) are moderately active and have slightly higher-than-average spending, indicating potential for loyalty.
 
       Recommendation Strategies:
 
@@ -163,7 +164,7 @@ Each cluster is represented by a different color, and the features are plotted o
       - Social Proof: Encourage reviews and referrals as they are moderately engaged.
 
 
-# **General Recommendations:**
+**General Recommendations:**
 
 1. **Customer Segmentation Marketing:** Use these insights to build targeted marketing strategies for each cluster.
 
@@ -191,6 +192,22 @@ Each cluster is represented by a different color, and the features are plotted o
 
 
 Now that the company understands its customer segments and their behavior, use this information to craft targeted marketing strategies. Focus on areas with high product sales rather than just high customer acquisition, ensuring a more strategic approach to increasing sales and ROI.
+
+
+# Future Work
+To further enhance customer segmentation and retention strategies, several areas of improvement and exploration are proposed:
+
+1. **Advanced Clustering Techniques:** Explore more sophisticated algorithms such as Gaussian Mixture Models (GMM) or Spectral Clustering to capture complex patterns and overlapping clusters.
+
+2. **Deep Learning Approaches:** Incorporate Autoencoders or Neural Network-based clustering to identify non-linear relationships and improve segmentation accuracy.
+
+3. **Personalization through Predictive Modeling:** Develop predictive models to forecast customer churn and loyalty, allowing proactive engagement and retention initiatives.
+
+4. **Incorporation of Real-Time Data:** Integrate real-time customer interaction data to create dynamic clusters that adapt to changing customer behavior.
+
+5. **Sentiment and Behavioral Analysis:** Use NLP techniques to analyze customer feedback and correlate it with cluster behaviors for better customer satisfaction insights.
+
+6. **A/B Testing of Strategies:** Implement targeted marketing campaigns based on cluster characteristics and conduct A/B testing to evaluate the effectiveness of tailored strategies.
 
 -----
 
@@ -226,14 +243,3 @@ Now that the company understands its customer segments and their behavior, use t
 **Acknowledgements**
 
 **Customer Data:** The dataset used in this project was provided by @amdari.io
-
-
-
-
-
-
-
-
-
-
-
