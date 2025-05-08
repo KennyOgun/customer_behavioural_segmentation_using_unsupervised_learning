@@ -1,4 +1,4 @@
-# Customer Segmentation Behaviour Analysis
+# Customer Behavioural Segmentation Using Unsupervised Learning
 
 
 <img width="960" alt="image" src="https://github.com/user-attachments/assets/28e6153e-9fe4-4879-9dc3-0ba560604810" />
