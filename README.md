@@ -62,17 +62,40 @@ The sales trend analysis reveals clear seasonal patterns of significant surge in
      lower retention rates, ranging between 20% and 29%.
    
 
-## Feature Engineering
+## Feature Engineering, Selection, and Dimensionality Reduction
+
+### Feature Engineering:
 The features are scaled using standardization techniques to ensure they are on the same scale for clustering and new features were createds based on RFM Analysis:
 
 1. Recency (R) Recency measures how recently a customer has made a purchase, providing insights into their engagement with the business.
 2. Frequency (F): measures total number of unique transactions made by a customer
 3. Monetary: measures the total amount spent by each customer.
 
-## Model Development
+### Feature Scaling and PCA: 
+1. Scaling: Here, it's crucial to scale the features, as  this is vital for distance-based methods 
+            like K-means and PCA and features with larger ranges can dominate, leading to biased      
+            clustering.
+2. PCA:     Reveals that three features can account for 81% can explained the variance to perform                       the clustering.
 
-* Optimal Clusters Analysis: To ascertain the optimal number of clusters (k) for segmenting customers, two renowned methods were used - Elbow Method and  Silhouette Method and both method suggest that optimal k = 3.
-* Best Model Hyperparameter Tunning: Four models—KMeans, Agglomerative Clustering, Hierarchical Clustering, and DBSCAN were trained with 3 cluster sizes to identify the optimal number of clusters for customer segmentation. The results for each cluster size were then compared using Silhouette Score, Davies-Bouldin Score, and Calinski-Harabasz Score for evaluating the clustering quality;
+## Model Selection, Training and Evaluation
+1. Optimal Clusters Analysis: To ascertain the optimal number of clusters (k) for segmenting customers, two renowned methods were used - Elbow Method and  Silhouette Method and both method suggest that optimal k = 4.
+
+<img width="561" alt="image" src="https://github.com/user-attachments/assets/59b2b544-0f0d-41e5-987f-1feec1f51375" />
+
+2. Models Selection: To select the best model to use, hyperparameter tunning were performed on Four(4) models to dentify the optimal number of clusters for customer segmentation:
+   
+   - **KMeans** : Clusters data by minimizing the variance within each cluster using centroid-based     
+                  partitioning.
+   - **Agglomerative Clustering**: A hierarchical clustering method that iteratively merges the closest 
+                  pairs of clusters.
+   - **Hierarchical Clustering:** Builds a tree-like structure (dendrogram) to show nested clusters formed 
+                  through either merging (agglomerative) or splitting (divisive).
+   - **DBSCAN (Density-Based Spatial Clustering of Applications with Noise):** Groups data points based on 
+                   density, identifying clusters of arbitrary shapes and noise points. 
+
+4. Evaluation Metrtics:
+
+The results for each cluster size were then compared using Silhouette Score, Davies-Bouldin Score, and Calinski-Harabasz Score for evaluating the clustering quality;
 
   
 
