@@ -123,7 +123,7 @@ Each cluster is represented by a different color, and the features are plotted o
 
 1. **Cluster 0(Low Recency, Moderate Frequency & Monetary Value): Average Customers** 
 
-   Customers in this cluster recently made purchases and they forms the majority (68.98%), but their buying frequency and monetary contributions are average or slightly below average.
+   Customers in this cluster(forms the majority (68.98%)) recently made purchases, but their buying frequency and monetary contributions are average or slightly below average.
 
    Recommendation Strategies:
 
@@ -142,7 +142,7 @@ Each cluster is represented by a different color, and the features are plotted o
       - Cross-Selling and Upselling: Introduce high-end products or bundles since they are willing to spend.
       - Retention Focus: Send personalized thank-you notes and loyalty points to reinforce their value to the business.
 
-3. **Cluster 2(High Recency, Low Frequency & Low Monetary Value)   :At-Risk (Churned) Customers**  
+3. **Cluster 2(High Recency, Low Frequency & Low Monetary Value):At-Risk (Churned) Customers**  
    Customers in this cluster are at risk of churn (represents 26.05%) as they haven’t purchased recently, and their spending is below average.
 
    Recommendation Strategies:
