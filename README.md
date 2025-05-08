@@ -78,11 +78,11 @@ The features are scaled using standardization techniques to ensure they are on t
 2. PCA:     Reveals that three features can account for 81% can explained the variance to perform                       the clustering.
 
 ## Model Selection, Training and Evaluation
-1. Optimal Clusters Analysis: To ascertain the optimal number of clusters (k) for segmenting customers, two renowned methods were used - Elbow Method and  Silhouette Method and both method suggest that optimal k = 4.
+1. **Optimal Clusters Analysis:** To ascertain the optimal number of clusters (k) for segmenting customers, two renowned methods were used - Elbow Method and  Silhouette Method and both method suggest that optimal k = 4.
 
 <img width="561" alt="image" src="https://github.com/user-attachments/assets/59b2b544-0f0d-41e5-987f-1feec1f51375" />
 
-2. Models Selection: To select the best model to use, hyperparameter tunning were performed on Four(4) models to dentify the optimal number of clusters for customer segmentation:
+2. **Models Selection:** To select the best model to use, hyperparameter tunning were performed on Four(4) models to dentify the optimal number of clusters for customer segmentation:
    
    - **KMeans** : Clusters data by minimizing the variance within each cluster using centroid-based     
                   partitioning.
@@ -93,90 +93,111 @@ The features are scaled using standardization techniques to ensure they are on t
    - **DBSCAN (Density-Based Spatial Clustering of Applications with Noise):** Groups data points based on 
                    density, identifying clusters of arbitrary shapes and noise points. 
 
-4. Evaluation Metrtics:
+## Model Evaluation:
 
-The results for each cluster size were then compared using Silhouette Score, Davies-Bouldin Score, and Calinski-Harabasz Score for evaluating the clustering quality;
-
-  
-
+To assess the clustering performance, the following evaluation metrics were used:
+1. **Silhouette Score:** Measures how similar an object is to its own cluster compared to other clusters. Higher scores indicate better-defined clusters.
+2. **Calinski-Harabasz Score:** Measures the ratio of the sum of between-cluster dispersion to within-cluster dispersion. Higher values indicate better-defined clusters.  
+3. **Davies-Bouldin Score:** Measures the average similarity ratio of each cluster with its most similar cluster. Lower scores indicate better separation of clusters
+   
   <img width="322" alt="image" src="https://github.com/user-attachments/assets/da6e52c9-3725-430a-9498-c9ad7b6f2e15" />
 
+KMeans is the best overall model because it has the highest Calinski-Harabasz Score- meaning its clusters are compact and well-separated, has the lowest Davies-Bouldin Score-meaning its clusters are well-distinguished and its Silhouette Score (0.6061) is good, although DBSCAN is higher, but DBSCAN struggles with compactness.
 
-
- 
-
-
-
-# Key Features
-
-**Customer Segmentation** using KMeans clustering to identify distinct groups.
-
-**Silhouette Score, Davies-Bouldin Score, and Calinski-Harabasz Score** for evaluating the clustering quality.
-
-**Radar Chart Visualization** for understanding the characteristics of each cluster.
-
-**Cluster Insights** including customer behavior, spending patterns, and business recommendations for each group.
-
-
-## Results
-
-**Clustering and Segmentation**
-
-**KMeans Clustering** is used to segment the customers into 3 clusters based on their transactional behavior.
-
-The number of clusters was chosen based on prior analysis, which suggests 3 distinct customer segments.
-
-**Model Parameters:**
-  * n_clusters=3 (3 customer segments)
-  * random_state=42 (for reproducibility)
-
-## Model Evaluation
-
-To assess the clustering performance, the following evaluation metrics are used:
-
-1. **Silhouette Score:** Measures how similar an object is to its own cluster compared to other clusters. Higher scores indicate better-defined clusters.
+ ## Visualization - KMeans Clustering
+1. **Cluster Distribution**
    
-2. **Calinski-Harabasz Score:** Measures the ratio of the sum of between-cluster dispersion to within-cluster dispersion. Higher values indicate better-defined clusters.
-   
-3. **Davies-Bouldin Score:** Measures the average similarity ratio of each cluster with its most similar cluster. Lower scores indicate better separation of clusters.
+<img width="632" alt="image" src="https://github.com/user-attachments/assets/eed2f068-640b-4e6d-bc1f-6d33ae1da714" />
 
-### Results:KMeans
+The bar plot shows the percentage distribution of customers across the four(4) clusters, providing insights into the balance of customer segments
 
-**Silhouette Score:** 0.61 (indicating average separation between clusters)
+2. **Radar Chart**
 
-**Calinski-Harabasz Score:** 5605 (indicating good clustering quality)
+![image](https://github.com/user-attachments/assets/cca7db30-d424-4c67-9a2f-2344aa74d48c)
 
-**Davies-Bouldin Score:** 0.51 (indicating moderate separation)
+The radar charts are generated for each cluster to visualize the average behavior of customers in that segment across various features.
+Each cluster is represented by a different color, and the features are plotted on a circular axis to easily compare the behaviors
 
-**Visualization**
+## Customers Clustering Analysis:
 
-**Radar Chart**
+1. **Cluster 0(Low Recency, Moderate Frequency & Monetary Value): Average Customers** 
 
-Radar charts are generated for each cluster to visualize the average behavior of customers in that segment across various features.
+   Customers in this cluster recently made purchases, but their buying frequency and monetary contributions are average or slightly below average.
 
-Each cluster is represented by a different color, and the features are plotted on a circular axis to easily compare the behaviors.
+   Recommendation Strategies:
 
-**Cluster Distribution**
-
-A bar plot shows the percentage distribution of customers across the 3 clusters, providing insights into the balance of customer segments.
-
-# **Business Insights**
-
-1. **Cluster 0:** contains inactive or Churned Customers that haven’t purchased in a long time. 
-
-   **Key strategies to implement: Win-Back Plan for Churned Customers** – Personalized offers, reminders, and surveys
-
-2. **Cluster 1: Average or Regular Customers:** shows customers that  have purchased relatively recently, these customers  purchase at an average rate, spend a typical amount, and buy a standard number of products.
-
-   **Key strategies to implement: Retention Plan for Regular Buyers** – Product recommendations, exclusive deals, and loyalty rewards.
-
-3. **Cluster 2: High-Value, Loyal Customers:**  shows that these customers buy frequently and recently, these customers  purchase very often, spend significantly more, and buy a lot of products.
-
-   **Key strategies to implement: VIP Customer Strategy** – Premium services, early access to deals, and personalized engagement.
+      - Loyalty Programs: Introduce rewards for consistent purchases to increase frequency.
+      - Personalized Offers: Use targeted discounts to incentivize slightly increased spending.
+      - Customer Engagement: Send thank-you messages or product recommendations to maintain engagement.
 
 
-**Project Setup**
-** Tech Stack**
+2. **Cluster 1(High Frequency & High Monetary Value): Top Spenders/High-Value Loyal Customers** 
+
+   This is the most valuable customer segment with high purchase frequency, high spending, and recent transactions.
+
+   Recommendation Strategies:
+
+      - VIP Programs: Offer exclusive benefits, early access to products, or premium support.
+      - Cross-Selling and Upselling: Introduce high-end products or bundles since they are willing to spend.
+      - Retention Focus: Send personalized thank-you notes and loyalty points to reinforce their value to the business.
+
+3. **Cluster 2(High Recency, Low Frequency & Low Monetary Value)   :At-Risk (Churned) Customers**  
+   Customers in this cluster are at risk of churn as they haven’t purchased recently, and their spending is below average.
+
+   Recommendation Strategies:
+
+      - Win-Back Campaigns: Offer discounts or incentives to re-engage them.
+      - Survey and Feedback: Understand reasons for disengagement and improve accordingly.
+      - Reminder Emails: Send gentle nudges with product updates or special deals.
+      - Reactivation Offers: Provide time-sensitive discounts to encourage purchase.
+
+4. **Cluster 3(Moderate Recency, Moderate Frequency & Monetary Value): Potential Loyalists**  
+
+      These customers are moderately active and have slightly higher-than-average spending, indicating potential for loyalty.
+
+      Recommendation Strategies:
+
+      - Retention Campaigns: Offer discounts on frequently purchased products to maintain engagement.
+      - Personalization: Tailor offers based on their previous purchase patterns.
+      - Build Brand Loyalty: Introduce membership perks or early access to sales.
+      - Social Proof: Encourage reviews and referrals as they are moderately engaged.
+
+
+# **General Recommendations:**
+
+1. **Customer Segmentation Marketing:** Use these insights to build targeted marketing strategies for each cluster.
+
+2. **Retention Strategy:** 
+      - Invest more in Cluster 1 (top spenders) to maintain loyalty.
+      - Focus on Cluster 2 to win back customers before they churn.
+
+3. **Personalized Communication:** Automate segmented email campaigns targeting each cluster with appropriate content.
+
+4. **Product Strategy:**
+      - For Cluster 3, highlight new product lines or complementary items to increase frequency.
+      - For Cluster 0, showcase popular or related products to boost their spending slightly.
+
+5. **Identify Key Drivers of High Retention:**
+      Analyze the factors that led to the high retention rate observed in the Customer Retention Cohort Analysis for December 2010. Determine whether successful elements such as marketing campaigns, product enhancements, or customer engagement initiatives played a role. Replicate these effective strategies across other cohorts to boost retention.
+
+6. **Investigate the Retention Drop in December 2011:**
+      Examine why retention rates declined across all cohorts in December 2011. Potential areas of investigation include customer feedback, product quality, customer service issues, or any operational changes during that period. Identifying and addressing these root causes will help improve future retention outcomes.
+
+7. **Set Realistic and Business-Specific Retention Targets:**
+      While the typical e-commerce retention rate ranges from 20% to 40%, it's essential to establish goals tailored to your specific business context. Use historical data and industry benchmarks to set achievable targets, aiming for gradual improvements over time.
+
+8. **Monitor and Adapt Continuously:**
+      Retention dynamics can shift due to various factors, so it’s important to regularly track retention metrics and customer behavior. Continuously analyze cohort data and make data-driven adjustments to your retention strategies to maintain high customer loyalty.
+
+
+Now that the company understands its customer segments and their behavior, use this information to craft targeted marketing strategies. Focus on areas with high product sales rather than just high customer acquisition, ensuring a more strategic approach to increasing sales and ROI.
+
+-----
+
+## Project Setup:
+
+* **Tech Stack**
+
   * Python 3.x
   * Libraries:
   * pandas
@@ -187,26 +208,24 @@ A bar plot shows the percentage distribution of customers across the 3 clusters,
   * tabulate
   * scipy
      
-**How to Use**
+* **How to Use**
 
-1. Clone the repository:
+  1. Clone the repository:
 
-  * git clone 'the folder'
+    * git clone 'the folder'
 
-2. Install the required dependencies:
+  2. Install the required dependencies:
 
-  * pip install -r requirements.txt
+    * pip install -r requirements.txt
 
-3. Run the analysis:
+  3. Run the analysis:
  
-  * Open the **customer_segment.ipynb** script to run the KMeans clustering and generate visualizations.
+    * Open the **customer_segment.ipynb** script to run the KMeans clustering and generate visualizations.
 
-  * Modify the dataset path or customize the number of clusters as needed.
-
-
+  
 **Acknowledgements**
 
-**Customer Data:** The dataset used in this project was provided by [@amdari.io].
+**Customer Data:** The dataset used in this project was provided by @amdari.io
 
 
 
