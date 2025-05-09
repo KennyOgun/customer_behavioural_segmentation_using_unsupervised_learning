@@ -45,7 +45,11 @@ Resolving these issues is critical for improving customer lifetime value (CLV) a
 8. Country: The country of the customer.
 
 ## Data Preprocessing & Exploratory Data Analysis (EDA)
+
+### Data Preprocessing 
 The Customer ID column(important feature) had 25% missing values and were dropped to prevent introduction of bias.
+
+### Exploratory Data Analysis (EDA)
 
 ### 1. Monthly Sales Trend
 
